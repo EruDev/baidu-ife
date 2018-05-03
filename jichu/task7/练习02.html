@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习02</title>
+    <style>
+        .left{
+            float: left;     
+        }
+        .right{
+            float: right;
+            border-left: 1px solid black;
+            width: 500px;
+            height: 300px;
+        }
+        .right .right-box{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            margin: 100px auto;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .box{
+            width: 800px;
+            height: 300px;
+            margin: 50px auto;
+            border: 1px solid black;
+        }
+        p{
+            margin-left: 20px;
+        }
+        input{
+            margin-left: 20px;
+            height: 20px;
+        }
+        .ipt03{
+            margin-left: 6px;
+        }
+        .btn01{
+            width: 100px;
+            height: 50px;
+            background-color: #0181cc;
+            color: white;
+            border-width: 0px;
+            margin-left: 60px !important;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            var oIpt1 = document.getElementById('ipt1');
+            var oIpt2 = document.getElementById('ipt2');
+            var oIpt3 = document.getElementById('ipt3');
+            var oIpt4 = document.getElementById('ipt4');
+            var oIpt5 = document.getElementById('ipt5');
+            var oBtn01 = document.getElementById('btn01');
+            var oRightBox = document.getElementById('right_box');
+            
+            
+            oBtn01.onclick = function()
+            {
+                if (oIpt1.value == "" || oIpt2.value == "" || oIpt3.value == "" || oIpt4.value == "" || oIpt5.value == "") {
+                    alert('必须全部输入!');
+                    return;
+                }
+                oRightBox.style.width = oIpt1.value;
+                oRightBox.style.height = oIpt2.value;
+                oRightBox.style.backgroundColor = oIpt3.value;
+                oRightBox.style.border = oIpt4.value;
+                oRightBox.style.borderRadius = oIpt5.value;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="left">
+            <p>
+                <label for="">宽度:</label>
+                <input type="text" class="ipt01" id="ipt1">
+            </p>
+            <p>
+                <label for="">高度:</label>
+                <input type="text" class="ipt02" id="ipt2">
+            </p>
+            <p>
+                <label for="">背景色:</label>
+                <input type="text" class="ipt03" id="ipt3">
+            </p>
+            <p>
+                <label for="">边框:</label>
+                <input type="text" class="ipt04" id="ipt4">
+            </p>
+            <p>
+                <label for="">圆角:</label>
+                <input type="text" class="ipt05" id="ipt5">
+            </p>
+            <p>
+                <input type="button" value="设置" class="btn01" id="btn01">
+            </p>
+        </div>
+        <div class="right">
+            <div class="right-box" id="right_box"></div>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

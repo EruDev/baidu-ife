@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>练习01</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 60px;
+            border: 1px solid gray;
+            margin: 50px auto;
+            line-height: 60px;
+            background-color: white;
+        }
+        input{
+            padding: 0px;
+            border-width: 0px;
+        }
+        span{
+            float: left;
+            margin-left: 10px;
+        }
+        .btn01{
+            width: 45px;
+            height: 40px;
+            margin-top: 10px;
+            margin-right: 10px;
+            float: right;
+            background-color:gold;
+        }
+        .btn02{
+            width: 45px;
+            height: 40px;
+            margin-top: 10px;
+            margin-right: 10px;
+            float: right;
+            background-color:red;
+        }
+        .btn03{
+            width: 45px;
+            height: 40px;
+            margin-top: 10px;
+            margin-right: 10px;
+            float: right;
+            background-color:#36c;
+        }
+        .btn04{
+            width: 45px;
+            height: 40px;
+            margin-top: 10px;
+            margin-right: 10px;
+            float: right;
+            background-color:pink;
+        }
+        .btn05{
+            width: 45px;
+            height: 40px;
+            margin-top: 10px;
+            margin-right: 10px;
+            float: right;
+            background-color:yellow;
+        }
+        .btn06{
+            width: 45px;
+            height: 40px;
+            margin-top: 10px;
+            margin-right: 10px;
+            float: right;
+            background-color:green;
+        }
+    
+    </style>
+    <script>
+        window.onload = function(){
+            var oBtn1 = document.getElementById('btn1');
+            var oBtn2 = document.getElementById('btn2');
+            var oBtn3 = document.getElementById('btn3');
+            var oBtn4 = document.getElementById('btn4');
+            var oBtn5 = document.getElementById('btn5');
+            var oBtn6 = document.getElementById('btn6');
+            var oBody = document.getElementById('bodys');
+
+            oBtn1.onclick = function() {
+                oBody.style.backgroundColor = 'gold';
+            };
+            oBtn2.onclick = function() {
+                oBody.style.backgroundColor = 'red';
+            };
+            oBtn3.onclick = function() {
+                oBody.style.backgroundColor = 'blue';
+            };
+            oBtn4.onclick = function() {
+                oBody.style.backgroundColor = 'pink';
+            };
+            oBtn5.onclick = function() {
+                oBody.style.backgroundColor = 'yellow';
+            };
+            oBtn6.onclick = function() {
+                oBody.style.backgroundColor = 'green';
+            };
+        }
+    </script>
+</head>
+<body id="bodys">
+    <div class="box">
+        <span>请选择网页的颜色:</span>
+        <input type="button" id="btn1" class="btn01">
+        <input type="button" id="btn2" class="btn02">
+        <input type="button" id="btn3" class="btn03">
+        <input type="button" id="btn4" class="btn04">
+        <input type="button" id="btn5" class="btn05">
+        <input type="button" id="btn6" class="btn06">
+        <!-- <span class="btn01" id="btn1"></span>
+        <span class="btn02" id="bnt2"></span>
+        <span class="btn03" id="btn3"></span>
+        <span class="btn04" id="btn4"></span>
+        <span class="btn05" id="btn5"></span>
+        <span class="btn06" id="btn6"></span> -->
+    </div>
+    
+</body>
+</html>
