@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移动小方块</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oBox = document.getElementById('box');
+
+            var speed = 0; // 小方块移动的速度
+            var direction = 5; // 指定方向
+
+            function mover(){
+                speed += direction
+                if(speed > 300){
+                    direction = -5;
+                }
+                if(speed < 0){
+                    direction = 5;
+                }
+                oBox.style.marginLeft = speed + 'px';
+            }
+            setInterval(mover, 30);
+        }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    
+</body>
+</html>
