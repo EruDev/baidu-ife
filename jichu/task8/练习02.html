@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>简单计算器</title>
+    <script>
+        window.onload = function(){
+            var oIpt01 = document.getElementById('ipt01'),
+                oIpt02 = document.getElementById('ipt02'),
+                oIpt03 = document.getElementById('ipt03'),
+                oFuhao = document.getElementById('fuhao'),
+                oBtn01 = document.getElementById('btn01');
+
+            oBtn01.onclick = function(){
+                var str = '';
+                var val01 = oIpt01.value;
+                var val02 = oIpt02.value;
+
+                if(oIpt01.value == '' || oIpt02.value == ''){
+                    alert('输入框内容不能为空!');
+                }
+
+                if(oFuhao.value == '0'){
+                    str = parseFloat(val01) + parseFloat(val02);
+                }else if (oFuhao.value == '1') {
+                    str = parseFloat(val01) - parseFloat(val02);
+                }else if (oFuhao.value == '2') {
+                    str = parseFloat(val01) * parseFloat(val02);
+                }else if(oFuhao.value == '3'){
+                    str = parseFloat(val01) / parseFloat(val02);
+                }
+            oIpt03.value = str;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="ipt01">
+    <select id="fuhao">
+        <option value="0">+</option>
+        <option value="1">-</option>
+        <option value="2">×</option>
+        <option value="3">%</option>
+    </select>
+    <input type="text" id="ipt02">
+    <input type="button" value="等于" id="btn01">
+    <input type="text" id="ipt03">
+</body>
+</html>
