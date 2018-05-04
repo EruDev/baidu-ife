@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 80px;
+            height: 40px;
+            border: 1px solid #666;
+            display: inline-block;
+            text-align: center;
+            line-height: 40px;
+            margin-left: -1px;
+            margin-top: -1px;
+        }
+    </style>
+    <script type="text/javascript">
+        // 请写出实现效果的代码
+        window.onload = function(){
+            var oBody = document.getElementById('body01');
+            var str = '';
+
+            for(var i=1; i<10; i++){
+                for(var j=1; j<i+1; j++){
+                    str += '<div>' + j + '×' + i + '=' + j * i + '</div>';
+                }
+                str += '<br>';    
+            }
+            oBody.innerHTML += str;
+        }
+    </script>
+</head>
+
+<body id="body01">
+
+</body>
+</html>
