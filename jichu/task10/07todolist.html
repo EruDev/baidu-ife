@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>todolist</title>
+    <style type="text/css">
+        .list_con {
+            width: 600px;
+            margin: 50px auto 0;
+        }
+
+        .inputtxt {
+            width: 550px;
+            height: 30px;
+            border: 1px solid #ccc;
+            padding: 0px;
+            text-indent: 10px;
+        }
+
+        .inputbtn {
+            width: 40px;
+            height: 32px;
+            padding: 0px;
+            border: 1px solid #ccc;
+        }
+
+        .list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .list li {
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .list li span {
+            float: left;
+        }
+
+        .list li a {
+            float: right;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            
+            $('#btn1').click(function () {
+                if ($('#txt1').val() == "") {
+                    alert('输入内容不能为空!');
+                }else{
+                    // var option = '<a href="javascript:;" class="up"> ↑ </a>' + '<a href="javascript:;" class="down"> ↓ </a>' + '<a href="javascript:;" class="del">删除</a>'
+                    var sContent = '<li><span>' + $('#txt1').val() + '</span><a href="javascript:;" class="up"> ↑ </a>' + '<a href="javascript:;" class="down"> ↓ </a>' + '<a href="javascript:;" class="del">删除</a>' + '</li>'
+                    $('#list').append(sContent);
+                    $('#txt1').val("");
+                }  
+            })
+            // 监听 删除 上下排序功能
+            // 发现存在一个 bug, 点击两次 ↑ ↓ 就会调换位置。。
+            $('#list').delegate('a', 'click', function () {
+                var sClass = $(this).prop('class');
+
+                if(sClass == "del"){
+                    $(this).parent().remove();
+                }else if (sClass == "up") {
+                    // 1. 获取当前 li 标签
+                    var $currentLi = $(this).parent();
+                    // 2. 获取当前 li 标签的上一个 li 标签
+                    var $prevLi = $currentLi.prev();
+
+                    // 判断当前是否到头了, 上面没有标签, 就表示到头了
+                    if ($prevLi.length == 0) {
+                        alert('到头了');
+                        return;
+                    }
+                    // 3. 调换位置
+                    $prevLi.insertAfter($currentLi);
+                }else if(sClass == 'down'){
+                    // 1. 获取当前 li 标签
+                    var $curLi = $(this).parent();
+                    // 2. 获取当前 li 标签的下一个 li 标签
+                    var $nextLi = $curLi.next();
+
+                    // 判断当前是否到底了, 上面没有标签, 就表示到头了
+                    if ($nextLi.length == 0) {
+                        alert('到底了');
+                        return;
+                    }
+                    // 3. 调换位置
+                    $nextLi.insertBefore($curLi);
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+    <div class="list_con">
+        <h2>To do list</h2>
+
+        <input type="text" name="" id="txt1" class="inputtxt">
+        <input type="button" name="" value="增加" id="btn1" class="inputbtn">
+
+        <ul id="list" class="list">
+
+            <li>
+                <span>学习html</span>
+                <a href="javascript:;" class="up"> ↑ </a>
+                <a href="javascript:;" class="down"> ↓ </a>
+                <a href="javascript:;" class="del">删除</a>
+            </li>
+            <li>
+                <span>学习css</span>
+                <a href="javascript:;" class="up"> ↑ </a>
+                <a href="javascript:;" class="down"> ↓ </a>
+                <a href="javascript:;" class="del">删除</a>
+            </li>
+            <li>
+                <span>学习javascript</span>
+                <a href="javascript:;" class="up"> ↑ </a>
+                <a href="javascript:;" class="down"> ↓ </a>
+                <a href="javascript:;" class="del">删除</a>
+            </li>
+
+        </ul>
+
+    </div>
+</body>
+
+</html>
