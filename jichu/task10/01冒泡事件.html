@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01冒泡事件</title>
+    <style>
+        .grandfather{
+            width: 600px;
+            height: 600px;
+            background-color: gold;
+        }
+        .father{
+            width: 400px;
+            height: 400px;
+            background-color: green;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            $('.grandfather').click(function () {
+                alert('grandfather');
+            })
+            $('.father').click(function () {
+                alert('father');
+            })
+            $('.son').click(function () {
+                alert('son');
+                // return false;
+                return stopPropagation();
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="grandfather">
+        <div class="father">
+            <div class="son"></div>
+        </div>
+    </div>
+</body>
+</html>
