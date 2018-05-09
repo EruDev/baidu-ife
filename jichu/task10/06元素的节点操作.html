@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06元素的节点操作</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: gold;
+        }
+    </style>
+    <script>
+        $(function () {
+            // 节点(标签) 的操作
+            // 1. 追加到标签的后面
+            var sNew = $('<div>这是新增的内容</div>')
+            // $('.box').append(sNew);
+            // 2. appendTo 添加到 box 之前
+            // sNew.appendTo($('.box'))
+
+            // 插入到标签之前
+            // $('.box').prepend(sNew);
+            // sNew.prependTo($('.box'))
+
+            // 在参照标签的外面 兄弟关系
+            // 前面
+            // $('.box').before(sNew);
+            // sNew.insertBefore($('.box'))
+
+            // 后面
+            // $('.box').after(sNew);
+            // sNew.insertAfter($('.box'))
+        })
+    </script>
+</head>
+<body>
+    <div class="box">
+        这是div标签的内容
+    </div>
+</body>
+</html>
