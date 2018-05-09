@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05事件委托</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function () {
+        // $('.list li').click(function () {
+        //     $(this).css({ 'color': 'red' });
+        // })
+
+        // var sNew = '<li>6</li>';
+        // $('.list').html(sNew);
+
+        // 事件的委托 delegate 将子元素的事件给父元素
+        // 1. 减少绑定次数 提高性能
+        // 2. 新增加的元素 有同样的功能
+
+       // 将子元素标签 li 的 click 事件委托给父元素
+       $('.list').delegate('li', 'click', function () {
+           $(this).css({'color':'red'})
+       })
+    })   
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>
