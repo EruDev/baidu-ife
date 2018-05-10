@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-过滤器</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vmAge = new Vue({
+                el:'.box',
+                data:{
+                    age:12
+                },
+                filters:{
+                    movie:function(age){
+                       if (age > 18) {
+                            return '可以进网吧';
+                        } else {
+                            return '再过两年吧';
+                        }
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        {{age|movie}}
+    </div>
+</body>
+</html>
