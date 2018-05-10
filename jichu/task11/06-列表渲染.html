@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-列表渲染</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+           var vu = new Vue({
+                el: '.box',
+                data: {
+                    dataList: [1, 2, 3, 4, 5],
+                    itemList:['a','b','c'],
+                    objList:[
+                        {'name': 'zhangsan', 'age':17},
+                        { 'name': 'lisi', 'age': 27 },
+                        { 'name': 'wafas', 'age': 32 },
+                        { 'name': 'laowang', 'age': 22 },
+                    ],
+                    objValue:[
+                        {'a':1},
+                        {'b':2}
+                    ]
+                }
+           })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <p v-for="content in dataList">{{content}}</p>
+
+        <ul class="list">
+            <!-- <li v-for="item in itemList">{{item}}</li> -->
+            <!-- <li v-for="(index,item) in itemList">{{item}}-{{index}}</li> -->
+            <!-- <li v-for="obj in objList">{{obj.name}}-{{obj.age}}</li> -->
+            <li v-for="value, key in objValue">{{key}}---{{value}}</li>
+        </ul>
+    </div>
+</body>
+</html>
