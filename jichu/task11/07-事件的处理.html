@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>07-事件的处理</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vu = new Vue({
+                el:'.box',
+                data:{
+
+                },
+                methods:{
+                    fnFather:function(){
+                        alert('father');
+                    },
+                    fnSon: function () {
+                        alert('son');
+                    },
+                    fnForm: function () {
+                        alert('提交的时间');
+                    },
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <form action="" @submit.prevent='fnForm'>
+            <input type="text">
+            <input type="submit">
+        </form>
+
+        <div class="father" @click="fnFather">
+            father
+            <div class="son" @click.stop="fnSon">son</div>
+        </div>
+    </div>
+</body>
+</html>
