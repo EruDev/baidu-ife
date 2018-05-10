@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>条件渲染</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vu = new Vue({
+                el:'.box',
+                data:{
+                    isFirst:3,
+                    isShow:false
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- <p v-if="isFirst">条件渲染的第一个标签</p> -->
+
+        <!-- <p v-if="isFirst">第一个标签</p> -->
+        <!-- <p v-else>第二个标签</p> -->
+
+        <!-- 多重判断 -->
+        <!-- <p v-if="isFirst==1">11111111</p>
+        <p v-else-if="isFirst==2">222222</p>
+        <p v-else-if="isFirst==3">333333</p>
+        <p v-else="isFirst==2">44444</p> -->
+
+
+
+        <!-- <p style="display: none;">show测试</p> -->
+        <p v-show="isShow">show测试</p>
+    </div>
+</body>
+</html>
