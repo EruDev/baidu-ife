@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-class和style的绑定</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .green{
+            color:green
+        }
+        .font{
+            font-size: 30px;
+        }
+        .txt{
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var vu = new Vue({
+                el:'.box',
+                data:{
+                    cls: 'green font txt',
+                    isGreen:true,
+                    isTxt:true,
+                    clsObj:{
+                        green:true,
+                        font:true,
+                    },
+                    clsList:['font', 'txt'],
+                    isGreen:true,
+
+                    // 操作style
+                    sle01:{
+                        'color': 'gold',
+                        'font-weight': 'blod',
+                    },
+                    sle02:{
+                        'font-size': '30px',
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- 操作style属性 -->
+        <p :style="sle01">操作style的属性变量</p>
+        <p :style="[sle01, sle02]">操作style列表</p>
+
+
+
+
+
+        <!-- =================== -->
+        <p :class="isGreen ? 'green': 'txt'">三目操作符来操作class</p>
+        <p :class="clsList">可以写成列表</p>
+        <p :class="clsObj">class可以写成对象</p>
+        <p :class="{green: isGreen, txt: isTxt}">class可以写成{类名:变量}</p>
+        <p :class="cls">class绑定属性</p>
+    </div>
+</body>
+</html>
