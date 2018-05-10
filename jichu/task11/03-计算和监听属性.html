@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-计算和监听属性</title>
+    <script src="js/vue.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el: '.box',
+                data:{
+                    count:0,
+                    message: 'ABCDEF'
+                },
+                computed:{
+                    reverseMsg:function(){
+                        return this.message.split('').reverse().join('');
+                    }
+                },
+                watch:{
+                    count:function(newVal, oldVal){
+                        console.log(newVal + '----------' + oldVal);
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <button @click="count += 1">累加器: {{count}}</button>
+
+        <!-- 计算属性 -->
+        <p>{{message.split("").reverse().join('')}}</p>
+        <p>计算属性的结果: {{reverseMsg}}</p>
+    </div>
+</body>
+</html>
