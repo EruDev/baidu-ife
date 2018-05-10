@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-vue的基本语法</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: lightgray;
+            color: gold;
+        }
+        .green{
+            color: green;
+        }
+        .blue{
+            color: blue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.box',
+                // 操作数据
+                data:{
+                    counter:0,
+                    new_counter:0,
+                    isGreen:false
+                },
+                methods:{
+                    fnAdd:function(){
+                        this.new_counter += 1
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <p :class="isGreen ? 'green':'blue'">三元运算符</p>
+        <div>
+            <button @click="counter += 1">计数器: {{counter}}</button>
+        </div>
+        <div>
+            <button @click="fnAdd" style="color:#36c">新计数器: {{new_counter}}</button>
+        </div>
+    </div>
+</body>
+</html>
