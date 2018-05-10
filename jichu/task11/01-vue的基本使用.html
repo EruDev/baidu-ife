@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-vue的基本使用</title>
+    <script src="js/vue.js"></script>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: lightgray;
+            color: #36c;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el: '.box',
+                data: {
+                    content: 'vue的简单使用',
+                    linkData: '京东首页链接',
+                    url:'http://jd.com',
+                    btnInfo: '普通按钮',
+                },
+                methods:{
+                    fnAlert:function () {
+                        alert('这是vue的用法')
+                    }
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <button v-on:click="fnAlert">{{btnInfo}}</button>
+        <br>
+        div标签里的内容: {{ content }}
+        <br/>
+        <a v-bind:href="url">{{linkData}}</a>
+    </div>
+</body>
+</html>
